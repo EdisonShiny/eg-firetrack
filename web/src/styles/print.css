@@ -1,0 +1,136 @@
+/* "PDF report" = the browser print dialog (Save as PDF) with this layout:
+   A4 portrait, one column, a report header, no controls, cards never split across pages. */
+@page {
+  size: A4 portrait;
+  margin: 12mm 11mm 14mm;
+}
+
+@media print {
+  :root {
+    --pad-page: 0px;
+  }
+  html,
+  body {
+    background: #fff !important;
+    font-size: 12px;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* header: page, selection, period, data date, sample-data note */
+  .print-header {
+    display: block;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: #374151;
+  }
+  .print-logo {
+    display: block;
+    height: 64px;
+    width: auto;
+    margin-bottom: 6px;
+  }
+  .print-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .print-note {
+    margin-top: 2px;
+    color: #92400e;
+  }
+
+  /* no interactive chrome */
+  .topbar,
+  .data-status,
+  .notify,
+  .btn,
+  .segmented,
+  .leaflet-control-container,
+  .map-buttons,
+  details {
+    display: none !important;
+  }
+
+  .page {
+    display: block;
+    padding: 0;
+  }
+  .main-col,
+  .side {
+    display: block;
+  }
+  .main-col > *,
+  .side > * {
+    margin-bottom: 10px;
+  }
+  .card,
+  .alert-tile,
+  .risk-band,
+  .alert-item,
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .card {
+    border-color: #d1d5db;
+    padding: 10px 12px;
+  }
+
+  /* map keeps a fixed printable height */
+  .map-card {
+    height: 120mm !important;
+    break-inside: avoid;
+  }
+
+  /* alerts: detail first, then the status summary and list */
+  .alert-head {
+    padding: 10px 12px;
+  }
+  .alert-tiles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .alert-tile-value {
+    font-size: 20px;
+  }
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .alert-list {
+    gap: 4px;
+  }
+  .table-scroll,
+  .chart-scroll {
+    overflow: visible !important;
+  }
+  /* keep the desktop grids on paper (A4 is narrower than the phone breakpoint) */
+  .report {
+    grid-template-columns: 120px 1fr;
+    gap: 6px 12px;
+  }
+  .report dd {
+    margin-bottom: 0;
+  }
+  .reasons li {
+    grid-template-columns: minmax(130px, 1.4fr) 80px 2fr 46px;
+  }
+  .reason-track,
+  .reason-pct {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  .reason-value {
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

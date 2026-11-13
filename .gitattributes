@@ -1,0 +1,8 @@
+# Keep model and data files byte-exact on every OS (LightGBM cannot read CRLF model files).
+data/processed/models/*.txt -text
+*.parquet binary
+*.gz binary
+*.png binary
+# The GitHub Action (Linux) and Vercel build read these; keep LF.
+*.sh text eol=lf
+*.yml text eol=lf

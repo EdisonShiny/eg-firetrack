@@ -1,0 +1,23 @@
+# Preset places for the Place filter (town centres, WGS84). The district is looked up from
+# data/processed/boundaries.geojson; `area` must match it (tested) and config/jurisdictions.json.
+places:
+  - {name: Kuching,             area: Sarawak,            lat: 1.5535,  lon: 110.3593}
+  - {name: Miri,                area: Sarawak,            lat: 4.3995,  lon: 113.9914}
+  - {name: Sibu,                area: Sarawak,            lat: 2.2870,  lon: 111.8305}
+  - {name: Bintulu,             area: Sarawak,            lat: 3.1710,  lon: 113.0419}
+  - {name: Mukah,               area: Sarawak,            lat: 2.8988,  lon: 112.0914}
+  - {name: Kota Kinabalu,       area: Sabah,              lat: 5.9804,  lon: 116.0735}
+  - {name: Sandakan,            area: Sabah,              lat: 5.8394,  lon: 118.1172}
+  - {name: Tawau,               area: Sabah,              lat: 4.2448,  lon: 117.8912}
+  - {name: Bandar Seri Begawan, area: Brunei,             lat: 4.9031,  lon: 114.9398}
+  - {name: Pontianak,           area: West Kalimantan,    lat: -0.0263, lon: 109.3425}
+  - {name: Ketapang,            area: West Kalimantan,    lat: -1.8530, lon: 109.9830}
+  - {name: Palangka Raya,       area: Central Kalimantan, lat: -2.2161, lon: 113.9135}
+  - {name: Pulang Pisau,        area: Central Kalimantan, lat: -2.7500, lon: 114.2650}
+  - {name: Banjarmasin,         area: South Kalimantan,   lat: -3.3186, lon: 114.5944}
+  - {name: Samarinda,           area: East Kalimantan,    lat: -0.5022, lon: 117.1536}
+  - {name: Balikpapan,          area: East Kalimantan,    lat: -1.2379, lon: 116.8529}
+  - {name: Tarakan,             area: North Kalimantan,   lat: 3.3000,  lon: 117.6000}
+
+# Place "Enter lat, lon…": the map shows hotspots within this distance of the point; history uses its province.
+custom_point_radius_km: 25

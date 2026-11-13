@@ -1,0 +1,81 @@
+{
+  "is_sample": false,
+  "built_at": "2026-11-13T16:19:08Z",
+  "data_through_utc": "2026-11-13 08:34:00",
+  "rows": 1735821,
+  "rows_per_year_sensor": {
+    "2017": {
+      "MODIS": 4492,
+      "VIIRS": 21460
+    },
+    "2018": {
+      "MODIS": 15437,
+      "VIIRS": 132465
+    },
+    "2019": {
+      "MODIS": 37869,
+      "VIIRS": 345736
+    },
+    "2020": {
+      "MODIS": 3915,
+      "VIIRS": 47452
+    },
+    "2021": {
+      "MODIS": 4174,
+      "VIIRS": 39981
+    },
+    "2022": {
+      "MODIS": 2999,
+      "VIIRS": 33423
+    },
+    "2023": {
+      "MODIS": 20367,
+      "VIIRS": 171307
+    },
+    "2024": {
+      "MODIS": 8896,
+      "VIIRS": 71076
+    },
+    "2025": {
+      "MODIS": 6338,
+      "VIIRS": 65998
+    },
+    "2026": {
+      "MODIS": 71729,
+      "VIIRS": 630707
+    }
+  },
+  "satellites": [
+    "Aqua",
+    "NOAA-20",
+    "S-NPP",
+    "Terra"
+  ],
+  "sources": [
+    "archive",
+    "nrt"
+  ],
+  "inputs": [
+    "data\\raw\\firms\\DL_FIRE_J1V-C2_841193.zip",
+    "data\\raw\\firms\\DL_FIRE_M-C61_841192.zip",
+    "data\\raw\\firms\\DL_FIRE_SV-C2_841194.zip",
+    "data\\raw\\firms\\api\\fire_nrt_MODIS_NRT_20261109T1207.csv",
+    "data\\raw\\firms\\api\\fire_nrt_MODIS_NRT_20261109T1208.csv",
+    "data\\raw\\firms\\api\\fire_nrt_MODIS_NRT_20261109T1213.csv",
+    "data\\raw\\firms\\api\\fire_nrt_MODIS_NRT_20261109T1221.csv",
+    "data\\raw\\firms\\api\\fire_nrt_MODIS_NRT_20261109T1233.csv",
+    "data\\raw\\firms\\api\\fire_nrt_MODIS_NRT_20261109T1413.csv",
+    "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1207.csv",
+    "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1208.csv",
+    "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1213.csv",
+    "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1221.csv",
+    "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1233.csv",
+    "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1413.csv",
+    "FIRMS API",
+    "FIRMS API",
+    "FIRMS API",
+    "FIRMS API",
+    "FIRMS API",
+    "FIRMS API"
+  ]
+}

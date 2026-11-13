@@ -1,0 +1,12 @@
+base:                    # by level
+  Low:      {firefighters: [5, 10],    engines: 1, pumps: 0,  helicopters: 0}
+  Moderate: {firefighters: [20, 50],   engines: 3, pumps: 4,  helicopters: 0, extras: [verification team]}
+  High:     {firefighters: [50, 150],  engines: 5, pumps: 10, helicopters: 1}
+  Critical: {firefighters: [150, 250], engines: 6, pumps: 20, helicopters: 2, extras: ["cloud seeding aircraft (if cloud cover >= 40%)"]}
+modifiers:
+  deep_peat: {firefighters_multiplier: 1.5, peat_lances: {Critical: 10, High: 6, Moderate: 3}}
+  shallow_peat: {peat_lances: 2}
+  far_from_road_km: {above: 10, add_helicopters: 1}
+  town_within_km: {below: 15, add: [field medical post, N95 masks for residents]}
+  extra_crew: {per_hotspots_above: 20, every: 10, crew_size: 10}
+arrive_within_h: {Critical: 2, High: 6, Moderate: 24}

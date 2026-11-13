@@ -1,0 +1,20 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+web/dist/
+data/raw/*
+!data/raw/.gitkeep
+.vercel/
+.DS_Store
+.codemap/
+
+# Local-only build notes (not part of the public submission)
+CLAUDE.md
+PROMPTS.md
+docs/progress.md
+docs/playbook.md
+docs/README.md
+docs/screens/
+.claude/

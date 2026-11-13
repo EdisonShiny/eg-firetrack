@@ -1,0 +1,84 @@
+# Phase 6: fire events, 72-hour forecast, 3-month forecast, weather. Change values here, never in code.
+# (Display bands, rule weights and words stay in bands.yaml / resources.yaml / actions.yaml.)
+
+events:                                   # docs/technical.md "The logic" 1
+  eps_km: 2                               # DBSCAN, haversine
+  min_samples: 3
+  window_h: 48                            # hotspots of the last 48 h are clustered
+  keep_id_within_km: 5                    # an event keeps its ID if its centre moves < 5 km
+  max_history_days: 10                    # days of event history kept in data/processed/alerts_state.json
+
+grid:
+  cell_deg: 0.1                           # forecast cell (~11 km)
+  neighbour_cells: 2                      # "within 25 km" = the 5 x 5 block of 0.1 deg cells around a cell
+  candidate_days: 7                       # a cell-day is scored when its 25 km block had fire in the last 7 days
+  burned_days: 730                        # "burned in the last 2 years"
+  scoring_history_days: 800               # the daily run builds features from this many days only
+
+model:                                    # 72-hour model (LightGBM + isotonic calibration)
+  horizons_days: [1, 2, 3]                # 24 / 48 / 72 h
+  train_years: [2017, 2023]               # booster
+  calibration_year: 2024                  # isotonic calibration (still before the test year)
+  test_year: 2025                         # never seen in training
+  cutoff: 0.5                             # hit / false alarm cut-off (also the next-day check)
+  params: {objective: binary, metric: auc, learning_rate: 0.05, num_leaves: 31, min_data_in_leaf: 50,
+           feature_fraction: 0.9, bagging_fraction: 0.8, bagging_freq: 1, verbose: -1, seed: 7}
+  num_boost_round: 300
+  top_reasons: 6
+  next_day_check_days: 30
+  backtest_years: [2019, 2023]
+  backtest_months: [6, 7, 8, 9, 10]
+
+monthly:                                  # 3-month model (pooled LightGBM regression)
+  horizons_months: [2, 3, 4]              # from the last full month: the 3 months after the current one
+  train_until_year: 2024
+  test_year: 2025
+  params: {objective: regression_l1, learning_rate: 0.05, num_leaves: 7, min_data_in_leaf: 10, verbose: -1, seed: 7}
+  num_boost_round: 200
+
+# Fallback when the model does not beat both baselines: the chance comes from "compared to normal"
+# (district anomaly this month, else province). Percent, by status word from bands.yaml.
+fallback_chance_pct: {Normal: 20, Above average: 50, Unusual: 80, none: 20}
+
+# Fuel (peat). No peat map is installed yet, so these are APPROXIMATE SAMPLE VALUES by district
+# (well-known peat districts), clearly labelled in the UI. Replace with a peat-depth map when available.
+peat:
+  source: "approximate district list (sample values, not a peat map)"
+  deep: [Kapuas, Pulang Pisau, Katingan, Kotawaringin Timur, Seruyan, Palangka Raya, Ketapang, Kubu Raya,
+         Mukah, Betong, Dalat, Daro, Matu]
+  shallow: [Barito Selatan, Barito Kuala, Banjar, Kotawaringin Barat, Sambas, Kayong Utara, Sarikei, Samarahan,
+            Kutai Kartanegara, Tanah Laut, Belait]
+
+people:
+  source: "distance to the preset towns in config/places.yaml (no population raster yet)"
+  town_near_km: 15                        # "People nearby" = fire events within 15 km of a town
+  teams_within_km: 50                     # Notify nearby teams
+
+weather:                                  # Open-Meteo (free, no key) for event centres in the daily run
+  url: "https://api.open-meteo.com/v1/forecast"
+  past_days: 30
+  forecast_days: 3
+  timeout_s: 30
+  dry_day_mm: 1.0                         # a day with < 1 mm counts as "without rain"
+  little_rain_mm: 10                      # 3-day rain forecast below this = "little rain forecast"
+  cloud_seeding_cloud_pct: 40
+
+haze:                                     # simple wind-drift estimate (not a smoke model)
+  min_hotspots_24h: 10                    # only events this large are checked
+  days: 3
+  km_per_day_per_kmh: 6                   # drift per day = wind speed (km/h) x 6, about 25% of the wind run
+  max_km_per_day: 150
+
+feature_labels:                           # words for the SHAP reasons ("Why the System expects spreading")
+  cell_1d: "Hotspots in this 11 km cell today"
+  cell_3d: "Hotspots in this cell, last 3 days"
+  cell_7d: "Hotspots in this cell, last 7 days"
+  near_1d: "Hotspots within 25 km today"
+  near_3d: "Hotspots within 25 km, last 3 days"
+  near_7d: "Hotspots within 25 km, last 7 days"
+  days_since_fire: "Days since the last fire in this cell"
+  burned_2y: "Fire days here in the last 2 years"
+  usual_cell: "Usual fire rate here this month"
+  usual_near: "Usual fire rate within 25 km this month"
+  peat: "Fuel (peat)"
+  month: "Month"

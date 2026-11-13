@@ -1,0 +1,21 @@
+{
+  "Sarawak":            {"country": "Malaysia", "utc_offset_h": 8,  "lead": "Bomba Sarawak (Fire and Rescue Dept.)", "support": "Sarawak state disaster office", "critical_adds": "NADMA", "contact": "[DUTY OFFICER] [PHONE]"},
+  "Sabah":              {"country": "Malaysia", "utc_offset_h": 8,  "lead": "Bomba Sabah (Fire and Rescue Dept.)",   "support": "Sabah state disaster office",   "critical_adds": "NADMA", "contact": "[DUTY OFFICER] [PHONE]"},
+  "Brunei":             {"country": "Brunei", "utc_offset_h": 8,    "lead": "Fire and Rescue Department",            "support": "National Disaster Management Centre", "critical_adds": "", "contact": "[DUTY OFFICER] [PHONE]"},
+  "West Kalimantan":    {"country": "Indonesia", "utc_offset_h": 7, "lead": "BPBD West Kalimantan",    "support": "Manggala Agni", "critical_adds": "BNPB", "contact": "[DUTY OFFICER] [PHONE]"},
+  "Central Kalimantan": {"country": "Indonesia", "utc_offset_h": 7, "lead": "BPBD Central Kalimantan", "support": "Manggala Agni", "critical_adds": "BNPB", "contact": "[DUTY OFFICER] [PHONE]"},
+  "South Kalimantan":   {"country": "Indonesia", "utc_offset_h": 8, "lead": "BPBD South Kalimantan",   "support": "Manggala Agni", "critical_adds": "BNPB", "contact": "[DUTY OFFICER] [PHONE]"},
+  "East Kalimantan":    {"country": "Indonesia", "utc_offset_h": 8, "lead": "BPBD East Kalimantan",    "support": "Manggala Agni", "critical_adds": "BNPB", "contact": "[DUTY OFFICER] [PHONE]"},
+  "North Kalimantan":   {"country": "Indonesia", "utc_offset_h": 8, "lead": "BPBD North Kalimantan",   "support": "Manggala Agni", "critical_adds": "BNPB", "contact": "[DUTY OFFICER] [PHONE]"},
+  "_haze_crosses_border": {"also_inform": "ASMC and the neighbouring country"},
+  "_places": {
+    "Kuching": "Sarawak", "Miri": "Sarawak", "Sibu": "Sarawak", "Bintulu": "Sarawak", "Mukah": "Sarawak",
+    "Kota Kinabalu": "Sabah", "Sandakan": "Sabah", "Tawau": "Sabah",
+    "Bandar Seri Begawan": "Brunei",
+    "Pontianak": "West Kalimantan", "Ketapang": "West Kalimantan",
+    "Palangka Raya": "Central Kalimantan", "Pulang Pisau": "Central Kalimantan",
+    "Banjarmasin": "South Kalimantan",
+    "Samarinda": "East Kalimantan", "Balikpapan": "East Kalimantan",
+    "Tarakan": "North Kalimantan"
+  }
+}

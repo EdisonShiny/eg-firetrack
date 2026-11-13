@@ -1,0 +1,98 @@
+# Data ingest settings (Phase 1). Change values here, never in code.
+firms:
+  bbox: [108.5, -4.5, 119.5, 7.5]          # west, south, east, north (Borneo box)
+  api_url: "https://firms.modaps.eosdis.nasa.gov/api/area/csv/{key}/{source}/{bbox}/{days}"
+  api_sources: [VIIRS_NOAA20_NRT, VIIRS_SNPP_NRT, MODIS_NRT]   # S-NPP ends 2 Nov 2026; empty answers are skipped
+  api_max_days: 10                          # FIRMS area API limit
+  timeout_s: 60
+  retries: 2
+  status_fresh_hours: 26                    # top-bar "Data status": green if the last good fetch is younger, else amber
+  status_note: "S-NPP ended 2 Nov 2026"     # shown under Live NASA FIRMS in the Data status popover
+
+confidence:                                 # one scale for both sensors; "low" is dropped
+  modis: [{max: 29, level: low}, {max: 79, level: nominal}, {max: 100, level: high}]
+  viirs: {l: low, n: nominal, h: high, low: low, nominal: nominal, high: high}
+  drop: [low]
+
+keep_types: [0]                             # vegetation fires; NRT rows have no type -> stored as -1 and kept
+unknown_type: -1
+
+satellites:                                 # FIRMS codes -> stored name
+  T: Terra
+  Terra: Terra
+  A: Aqua
+  Aqua: Aqua
+  N: S-NPP
+  SNPP: S-NPP                               # real archive downloads use "SNPP"
+  Suomi NPP: S-NPP
+  Suomi-NPP: S-NPP
+  N20: NOAA-20
+  "1": NOAA-20
+  NOAA-20: NOAA-20
+  NOAA20: NOAA-20
+  N21: NOAA-21
+  "2": NOAA-21
+  NOAA-21: NOAA-21
+
+viirs_instruments: [VIIRS, SNPP, NOAA20, NOAA21]   # FIRMS "instrument" values that mean VIIRS
+viirs_satellites: [S-NPP, NOAA-20, NOAA-21]        # stored satellite names that are VIIRS
+
+local_utc_offset_h: 8                       # MYT (Malaysia/Brunei time)
+
+boundaries:
+  # GADM level used for "district" per country, and which level-1 units belong to Borneo
+  countries:
+    MYS: {country: Malaysia,  district_level: 2, provinces: {Sarawak: Sarawak, Sabah: Sabah, Labuan: Sabah}}
+    BRN: {country: Brunei,    district_level: 1, provinces: {"*": Brunei}}
+    IDN: {country: Indonesia, district_level: 2, provinces: {
+            Kalimantan Barat: West Kalimantan, Kalimantan Tengah: Central Kalimantan,
+            Kalimantan Selatan: South Kalimantan, Kalimantan Timur: East Kalimantan,
+            Kalimantan Utara: North Kalimantan}}
+  simplify_deg: 0.001                       # ~100 m, keeps tagging accurate
+  nearest_max_km: 1.0                       # points just off a simplified coast go to the nearest district
+
+areas: [Sarawak, Sabah, Brunei, West Kalimantan, Central Kalimantan, South Kalimantan, East Kalimantan, North Kalimantan]
+
+processed:
+  max_file_mb: 90
+
+harmonize:                                  # Phase 2 (docs/technical.md Data D-E). Change values here, never in code.
+  cell_deg: 0.01                            # 1 km fire cell; one cell counts once per sensor per day
+  day_column: date_myt                      # "day" = MYT calendar date (no satellite pass crosses MYT midnight)
+  match: {max_deg: 0.01, max_hours: 1}      # same fire: MODIS and VIIRS within +-1 km and +-1 h
+  calibration:
+    modis_satellite: Aqua                   # Aqua crosses with S-NPP/NOAA-20 at ~1:30 am/pm
+    pass_window_hours: 1                    # VIIRS detections within +-1 h of that day's Aqua pass (day / night)
+    seasons:                                # k is fitted per province x season
+      dry: [6, 7, 8, 9, 10]
+      wet: [11, 12, 1, 2, 3, 4, 5]
+    min_modis_cells: 30                     # fewer -> fall back to province all-season k, then Borneo season k
+  gap_fill:                                 # day with no VIIRS data -> MODIS cells x k
+    min_modis_cells: 3                      # whole-Borneo MODIS cells needed before a VIIRS-empty day counts as a gap
+    viirs_outage_days: []                   # known outage dates (YYYY-MM-DD), always treated as gaps
+  static:                                   # NRT rows (type -1) near a known static source are dropped
+    types: [1, 2, 3]                        # FIRMS type: 1 volcano, 2 other static land source, 3 offshore
+    buffer_cells: 1
+
+export:                                     # Phase 3: website JSON in web/public/data. Change values here, never in code.
+  periods_days: {current: 1, 7d: 7, 30d: 30, 12m: 365, 5y: 1826}   # rolling windows ending at the latest data; "all" = everything
+  points_max_days: 30                       # raw points only for <= 30 days (hotspots_30d.json)
+  grid_deg: 0.1                             # longer periods are 0.1 deg cells (grid_12m / grid_5y / grid_all)
+  grid_periods: {12m: 365, 5y: 1826, all: null}
+  boundaries_simplify_deg: 0.004            # display borders (~400 m); tagging still uses data/processed/boundaries.geojson
+  boundaries_decimals: 4
+  partial_check_days: 10                    # meta.json flags days in this window where a sensor delivered nothing
+  max_kb:                                   # size budget (docs/progress.md section 2); the export warns above it
+    meta.json: 2
+    bands.json: 8
+    places.json: 20
+    boundaries.json: 1500
+    hotspots_30d.json: 6000                 # real peak-season 30 days ~140k points = 5.6 MB (1.3 MB gzip on Vercel)
+    grid_12m.json: 400
+    grid_5y.json: 400
+    grid_all.json: 400
+    ranking.json: 20
+    area: 40
+    alerts.json: 250                        # grows with the number of active alerts (~3.5 KB each)
+    model.json: 5
+    export/monthly.csv: 250

@@ -1,0 +1,649 @@
+{
+  "is_sample": false,
+  "note": "FIRMS archive data.",
+  "built_at": "2026-11-13T16:19:17Z",
+  "method": {
+    "k": "sum of VIIRS fire cells / sum of Aqua MODIS fire cells on matching overpasses (VIIRS within +-1 h of the Aqua pass), per province x season",
+    "fit_years": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "seasons": {
+      "dry": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "wet": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "check": "leave one year out; R^2 over province-months, average error over yearly totals"
+  },
+  "k": {
+    "provinces": {
+      "Brunei": {
+        "dry": {
+          "k": 7.4943,
+          "modis_cells": 21,
+          "viirs_cells": 233,
+          "source": "province all seasons"
+        },
+        "wet": {
+          "k": 6.3485,
+          "modis_cells": 66,
+          "viirs_cells": 419,
+          "source": "province season"
+        }
+      },
+      "Central Kalimantan": {
+        "dry": {
+          "k": 5.4469,
+          "modis_cells": 17869,
+          "viirs_cells": 97330,
+          "source": "province season"
+        },
+        "wet": {
+          "k": 5.2874,
+          "modis_cells": 1639,
+          "viirs_cells": 8666,
+          "source": "province season"
+        }
+      },
+      "East Kalimantan": {
+        "dry": {
+          "k": 5.6026,
+          "modis_cells": 7133,
+          "viirs_cells": 39963,
+          "source": "province season"
+        },
+        "wet": {
+          "k": 4.9318,
+          "modis_cells": 1834,
+          "viirs_cells": 9045,
+          "source": "province season"
+        }
+      },
+      "North Kalimantan": {
+        "dry": {
+          "k": 4.8777,
+          "modis_cells": 1741,
+          "viirs_cells": 8492,
+          "source": "province season"
+        },
+        "wet": {
+          "k": 4.4523,
+          "modis_cells": 325,
+          "viirs_cells": 1447,
+          "source": "province season"
+        }
+      },
+      "Sabah": {
+        "dry": {
+          "k": 6.5489,
+          "modis_cells": 838,
+          "viirs_cells": 5488,
+          "source": "province season"
+        },
+        "wet": {
+          "k": 5.3626,
+          "modis_cells": 1037,
+          "viirs_cells": 5561,
+          "source": "province season"
+        }
+      },
+      "Sarawak": {
+        "dry": {
+          "k": 5.604,
+          "modis_cells": 2965,
+          "viirs_cells": 16616,
+          "source": "province season"
+        },
+        "wet": {
+          "k": 5.2152,
+          "modis_cells": 739,
+          "viirs_cells": 3854,
+          "source": "province season"
+        }
+      },
+      "South Kalimantan": {
+        "dry": {
+          "k": 7.3833,
+          "modis_cells": 5043,
+          "viirs_cells": 37234,
+          "source": "province season"
+        },
+        "wet": {
+          "k": 7.668,
+          "modis_cells": 518,
+          "viirs_cells": 3972,
+          "source": "province season"
+        }
+      },
+      "West Kalimantan": {
+        "dry": {
+          "k": 5.3296,
+          "modis_cells": 28666,
+          "viirs_cells": 152779,
+          "source": "province season"
+        },
+        "wet": {
+          "k": 5.8008,
+          "modis_cells": 1717,
+          "viirs_cells": 9960,
+          "source": "province season"
+        }
+      }
+    },
+    "borneo": {
+      "dry": {
+        "k": 5.5718,
+        "modis_cells": 64276,
+        "viirs_cells": 358135,
+        "source": "Borneo season"
+      },
+      "wet": {
+        "k": 5.4507,
+        "modis_cells": 7875,
+        "viirs_cells": 42924,
+        "source": "Borneo season"
+      }
+    },
+    "borneo_all": 5.5586
+  },
+  "check": {
+    "years": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "provinces": {
+      "Brunei": {
+        "r2": 0.425,
+        "avg_error_pct": 87.9,
+        "per_year": {
+          "2017": {
+            "modis_cells": 7,
+            "viirs_cells": 15,
+            "predicted_viirs": 50.0
+          },
+          "2018": {
+            "modis_cells": 6,
+            "viirs_cells": 66,
+            "predicted_viirs": 42.5
+          },
+          "2019": {
+            "modis_cells": 12,
+            "viirs_cells": 180,
+            "predicted_viirs": 67.1
+          },
+          "2020": {
+            "modis_cells": 17,
+            "viirs_cells": 116,
+            "predicted_viirs": 105.9
+          },
+          "2021": {
+            "modis_cells": 5,
+            "viirs_cells": 51,
+            "predicted_viirs": 34.3
+          },
+          "2022": {
+            "modis_cells": 5,
+            "viirs_cells": 39,
+            "predicted_viirs": 32.2
+          },
+          "2023": {
+            "modis_cells": 10,
+            "viirs_cells": 72,
+            "predicted_viirs": 70.2
+          },
+          "2024": {
+            "modis_cells": 21,
+            "viirs_cells": 107,
+            "predicted_viirs": 146.7
+          },
+          "2025": {
+            "modis_cells": 4,
+            "viirs_cells": 6,
+            "predicted_viirs": 27.6
+          }
+        }
+      },
+      "Central Kalimantan": {
+        "r2": 0.989,
+        "avg_error_pct": 21.2,
+        "per_year": {
+          "2017": {
+            "modis_cells": 417,
+            "viirs_cells": 1472,
+            "predicted_viirs": 2281.1
+          },
+          "2018": {
+            "modis_cells": 2521,
+            "viirs_cells": 13561,
+            "predicted_viirs": 13722.8
+          },
+          "2019": {
+            "modis_cells": 9325,
+            "viirs_cells": 54016,
+            "predicted_viirs": 47580.9
+          },
+          "2020": {
+            "modis_cells": 575,
+            "viirs_cells": 3265,
+            "predicted_viirs": 3106.8
+          },
+          "2021": {
+            "modis_cells": 314,
+            "viirs_cells": 2018,
+            "predicted_viirs": 1694.9
+          },
+          "2022": {
+            "modis_cells": 243,
+            "viirs_cells": 1582,
+            "predicted_viirs": 1307.8
+          },
+          "2023": {
+            "modis_cells": 4433,
+            "viirs_cells": 23609,
+            "predicted_viirs": 24310.3
+          },
+          "2024": {
+            "modis_cells": 1085,
+            "viirs_cells": 3990,
+            "predicted_viirs": 6009.8
+          },
+          "2025": {
+            "modis_cells": 595,
+            "viirs_cells": 2483,
+            "predicted_viirs": 3257.9
+          }
+        }
+      },
+      "East Kalimantan": {
+        "r2": 0.952,
+        "avg_error_pct": 38.0,
+        "per_year": {
+          "2017": {
+            "modis_cells": 407,
+            "viirs_cells": 1597,
+            "predicted_viirs": 2267.6
+          },
+          "2018": {
+            "modis_cells": 1185,
+            "viirs_cells": 7748,
+            "predicted_viirs": 6363.9
+          },
+          "2019": {
+            "modis_cells": 2520,
+            "viirs_cells": 16276,
+            "predicted_viirs": 12997.8
+          },
+          "2020": {
+            "modis_cells": 582,
+            "viirs_cells": 3021,
+            "predicted_viirs": 3072.7
+          },
+          "2021": {
+            "modis_cells": 311,
+            "viirs_cells": 1842,
+            "predicted_viirs": 1697.8
+          },
+          "2022": {
+            "modis_cells": 288,
+            "viirs_cells": 1930,
+            "predicted_viirs": 1558.1
+          },
+          "2023": {
+            "modis_cells": 1678,
+            "viirs_cells": 10017,
+            "predicted_viirs": 9096.2
+          },
+          "2024": {
+            "modis_cells": 1394,
+            "viirs_cells": 5319,
+            "predicted_viirs": 7923.2
+          },
+          "2025": {
+            "modis_cells": 602,
+            "viirs_cells": 1258,
+            "predicted_viirs": 3459.7
+          }
+        }
+      },
+      "North Kalimantan": {
+        "r2": 0.904,
+        "avg_error_pct": 29.2,
+        "per_year": {
+          "2017": {
+            "modis_cells": 165,
+            "viirs_cells": 671,
+            "predicted_viirs": 805.7
+          },
+          "2018": {
+            "modis_cells": 288,
+            "viirs_cells": 1565,
+            "predicted_viirs": 1358.5
+          },
+          "2019": {
+            "modis_cells": 470,
+            "viirs_cells": 2806,
+            "predicted_viirs": 2121.1
+          },
+          "2020": {
+            "modis_cells": 186,
+            "viirs_cells": 742,
+            "predicted_viirs": 900.0
+          },
+          "2021": {
+            "modis_cells": 194,
+            "viirs_cells": 749,
+            "predicted_viirs": 951.6
+          },
+          "2022": {
+            "modis_cells": 157,
+            "viirs_cells": 829,
+            "predicted_viirs": 750.5
+          },
+          "2023": {
+            "modis_cells": 238,
+            "viirs_cells": 1359,
+            "predicted_viirs": 1116.9
+          },
+          "2024": {
+            "modis_cells": 234,
+            "viirs_cells": 885,
+            "predicted_viirs": 1149.0
+          },
+          "2025": {
+            "modis_cells": 134,
+            "viirs_cells": 333,
+            "predicted_viirs": 665.2
+          }
+        }
+      },
+      "Sabah": {
+        "r2": 0.743,
+        "avg_error_pct": 43.3,
+        "per_year": {
+          "2017": {
+            "modis_cells": 146,
+            "viirs_cells": 520,
+            "predicted_viirs": 944.7
+          },
+          "2018": {
+            "modis_cells": 257,
+            "viirs_cells": 1797,
+            "predicted_viirs": 1566.4
+          },
+          "2019": {
+            "modis_cells": 355,
+            "viirs_cells": 2775,
+            "predicted_viirs": 1835.1
+          },
+          "2020": {
+            "modis_cells": 270,
+            "viirs_cells": 1463,
+            "predicted_viirs": 1542.2
+          },
+          "2021": {
+            "modis_cells": 188,
+            "viirs_cells": 1182,
+            "predicted_viirs": 1223.6
+          },
+          "2022": {
+            "modis_cells": 74,
+            "viirs_cells": 509,
+            "predicted_viirs": 455.2
+          },
+          "2023": {
+            "modis_cells": 148,
+            "viirs_cells": 1114,
+            "predicted_viirs": 853.4
+          },
+          "2024": {
+            "modis_cells": 364,
+            "viirs_cells": 1509,
+            "predicted_viirs": 2184.6
+          },
+          "2025": {
+            "modis_cells": 73,
+            "viirs_cells": 180,
+            "predicted_viirs": 492.8
+          }
+        }
+      },
+      "Sarawak": {
+        "r2": 0.872,
+        "avg_error_pct": 32.2,
+        "per_year": {
+          "2017": {
+            "modis_cells": 505,
+            "viirs_cells": 1503,
+            "predicted_viirs": 3001.3
+          },
+          "2018": {
+            "modis_cells": 755,
+            "viirs_cells": 4727,
+            "predicted_viirs": 4058.3
+          },
+          "2019": {
+            "modis_cells": 673,
+            "viirs_cells": 4454,
+            "predicted_viirs": 3553.5
+          },
+          "2020": {
+            "modis_cells": 208,
+            "viirs_cells": 1357,
+            "predicted_viirs": 1123.5
+          },
+          "2021": {
+            "modis_cells": 345,
+            "viirs_cells": 2339,
+            "predicted_viirs": 1867.7
+          },
+          "2022": {
+            "modis_cells": 185,
+            "viirs_cells": 1350,
+            "predicted_viirs": 996.0
+          },
+          "2023": {
+            "modis_cells": 407,
+            "viirs_cells": 2249,
+            "predicted_viirs": 2245.4
+          },
+          "2024": {
+            "modis_cells": 320,
+            "viirs_cells": 1462,
+            "predicted_viirs": 1791.0
+          },
+          "2025": {
+            "modis_cells": 306,
+            "viirs_cells": 1029,
+            "predicted_viirs": 1747.1
+          }
+        }
+      },
+      "South Kalimantan": {
+        "r2": 0.98,
+        "avg_error_pct": 34.3,
+        "per_year": {
+          "2017": {
+            "modis_cells": 258,
+            "viirs_cells": 1155,
+            "predicted_viirs": 1946.9
+          },
+          "2018": {
+            "modis_cells": 836,
+            "viirs_cells": 7517,
+            "predicted_viirs": 5922.8
+          },
+          "2019": {
+            "modis_cells": 2067,
+            "viirs_cells": 15722,
+            "predicted_viirs": 15108.5
+          },
+          "2020": {
+            "modis_cells": 134,
+            "viirs_cells": 843,
+            "predicted_viirs": 1002.5
+          },
+          "2021": {
+            "modis_cells": 144,
+            "viirs_cells": 997,
+            "predicted_viirs": 1073.0
+          },
+          "2022": {
+            "modis_cells": 66,
+            "viirs_cells": 625,
+            "predicted_viirs": 493.5
+          },
+          "2023": {
+            "modis_cells": 1713,
+            "viirs_cells": 12659,
+            "predicted_viirs": 12700.1
+          },
+          "2024": {
+            "modis_cells": 205,
+            "viirs_cells": 1268,
+            "predicted_viirs": 1528.3
+          },
+          "2025": {
+            "modis_cells": 138,
+            "viirs_cells": 420,
+            "predicted_viirs": 1037.3
+          }
+        }
+      },
+      "West Kalimantan": {
+        "r2": 0.937,
+        "avg_error_pct": 27.4,
+        "per_year": {
+          "2017": {
+            "modis_cells": 1803,
+            "viirs_cells": 5183,
+            "predicted_viirs": 9940.6
+          },
+          "2018": {
+            "modis_cells": 4807,
+            "viirs_cells": 29454,
+            "predicted_viirs": 24985.0
+          },
+          "2019": {
+            "modis_cells": 6794,
+            "viirs_cells": 36243,
+            "predicted_viirs": 36389.6
+          },
+          "2020": {
+            "modis_cells": 1198,
+            "viirs_cells": 10212,
+            "predicted_viirs": 6262.9
+          },
+          "2021": {
+            "modis_cells": 1983,
+            "viirs_cells": 12647,
+            "predicted_viirs": 10545.6
+          },
+          "2022": {
+            "modis_cells": 1512,
+            "viirs_cells": 10778,
+            "predicted_viirs": 8027.1
+          },
+          "2023": {
+            "modis_cells": 5904,
+            "viirs_cells": 28444,
+            "predicted_viirs": 32368.9
+          },
+          "2024": {
+            "modis_cells": 3838,
+            "viirs_cells": 15349,
+            "predicted_viirs": 21269.7
+          },
+          "2025": {
+            "modis_cells": 2544,
+            "viirs_cells": 14429,
+            "predicted_viirs": 13556.7
+          }
+        }
+      }
+    },
+    "borneo": {
+      "r2": 0.979,
+      "avg_error_pct": 24.1,
+      "per_year": {
+        "2017": {
+          "modis_cells": 3708,
+          "viirs_cells": 12116,
+          "predicted_viirs": 21238.0
+        },
+        "2018": {
+          "modis_cells": 10655,
+          "viirs_cells": 66435,
+          "predicted_viirs": 58020.2
+        },
+        "2019": {
+          "modis_cells": 22216,
+          "viirs_cells": 132472,
+          "predicted_viirs": 119653.7
+        },
+        "2020": {
+          "modis_cells": 3170,
+          "viirs_cells": 21019,
+          "predicted_viirs": 17116.4
+        },
+        "2021": {
+          "modis_cells": 3484,
+          "viirs_cells": 21825,
+          "predicted_viirs": 19088.5
+        },
+        "2022": {
+          "modis_cells": 2530,
+          "viirs_cells": 17642,
+          "predicted_viirs": 13620.5
+        },
+        "2023": {
+          "modis_cells": 14531,
+          "viirs_cells": 79523,
+          "predicted_viirs": 82761.4
+        },
+        "2024": {
+          "modis_cells": 7461,
+          "viirs_cells": 29889,
+          "predicted_viirs": 42002.2
+        },
+        "2025": {
+          "modis_cells": 4396,
+          "viirs_cells": 20138,
+          "predicted_viirs": 24244.4
+        }
+      }
+    }
+  },
+  "gap_days": {
+    "count": 1,
+    "days": [
+      "2018-01-26"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# condition -> action, grouped by time window. `why` is the plain reason shown on the alert;
+# {hotspots}, {growth}, {town_km}, {road_km}, {level_name} are filled in by pipeline/rules.py.
+- {when: "0-2 h",   if: "level >= 3",                         action: "Dispatch ground crews to the fire edge",     why: "{hotspots} active hotspots, {growth} in 24 h"}
+- {when: "0-2 h",   if: "level >= 3 and peat != 'none'",      action: "Start peat injection on smouldering ground", why: "peat keeps burning below the surface"}
+- {when: "0-2 h",   if: "level >= 3 and (road_km > 10 or growth_pct > 40)", action: "Request aerial water bombing", why: "fast growth ({growth} in 24 h) or far from a road"}
+- {when: "2-12 h",  if: "level == 2",                         action: "Send a verification team to the site",       why: "confirm the fire on the ground before sending crews"}
+- {when: "2-12 h",  if: "level >= 3",                         action: "Cut firebreaks on the downwind side",        why: "stop spread toward unburned land"}
+- {when: "2-12 h",  if: "level >= 2 and town_km < 15",        action: "Issue a health advisory and hand out masks", why: "town only {town_km} km away"}
+- {when: "12-72 h", if: "level >= 2 and peat == 'deep'",      action: "Block drainage canals to rewet the peat",    why: "prevents the peat fire from coming back"}
+- {when: "12-72 h", if: "level == 4",                         action: "Assess cloud seeding with the weather agency (cloud cover >= 40%, little rain forecast)", why: "only if cloud cover ≥ 40% and little rain is forecast"}
+- {when: "12-72 h", if: "haze_to_border",                     action: "Inform ASMC and the neighbouring country",   why: "smoke forecast to cross the border"}
+- {when: "Daily",   if: "true",                               action: "Re-check with the next satellite pass",      why: "update level and resources"}
