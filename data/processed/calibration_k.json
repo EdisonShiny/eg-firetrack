@@ -1,7 +1,7 @@
 {
   "is_sample": false,
   "note": "FIRMS archive data.",
-  "built_at": "2026-11-13T16:19:17Z",
+  "built_at": "2026-11-14T01:55:13Z",
   "method": {
     "k": "sum of VIIRS fire cells / sum of Aqua MODIS fire cells on matching overpasses (VIIRS within +-1 h of the Aqua pass), per province x season",
     "fit_years": [
