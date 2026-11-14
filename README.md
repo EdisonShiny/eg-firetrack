@@ -52,9 +52,3 @@ pip install -r pipeline/requirements.txt
 python -m pipeline.run_daily --export web/public/data   # needs FIRMS_MAP_KEY in .env
 cd web && npm install && npm run dev                    # http://localhost:5173
 ```
-
-## Use of AI
-AI coding assistants (Claude) helped write, test and debug code and draft documentation. The design, logic and decisions are the team's.
-
----
-© 2026 EG Solution 2.0 Team · NASA data used under NASA's open data policy; NASA does not endorse this project.
