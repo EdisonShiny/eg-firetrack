@@ -1,7 +1,7 @@
 # EG FireTrack
 
 **Wildfire monitoring and early warning for Borneo, using NASA satellite data**
-NASA Space Apps Challenge 2026 · *Harmonization of MODIS and VIIRS Hot Spots* · EG Solution 2.0 Team
+NASA Space Apps Challenge 2026 · Harmonization of MODIS and VIIRS Hot Spots· EG Solution 2.0 Team
 
 ### 🔗 Live website: **https://eg-firetrack.vercel.app**
 Click to open. No login needed; works on computer and phone.
