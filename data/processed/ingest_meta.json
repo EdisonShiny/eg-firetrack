@@ -1,6 +1,6 @@
 {
   "is_sample": false,
-  "built_at": "2026-11-17T04:15:04Z",
+  "built_at": "2026-11-17T05:13:01Z",
   "data_through_utc": "2026-11-17 00:37:00",
   "rows": 1736324,
   "rows_per_year_sensor": {
@@ -71,6 +71,7 @@
     "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1221.csv",
     "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1233.csv",
     "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1413.csv",
+    "FIRMS API",
     "FIRMS API",
     "FIRMS API",
     "FIRMS API",
