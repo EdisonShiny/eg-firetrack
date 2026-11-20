@@ -117,7 +117,7 @@ Whole Borneo,,2026,7,1678,8988,10227,10.6
 Whole Borneo,,2026,8,18240,68213,78447,12.4
 Whole Borneo,,2026,9,23373,78067,88948,10.9
 Whole Borneo,,2026,10,15061,66007,72545,9.1
-Whole Borneo,,2026,11,1126,3909,4704,9.0
+Whole Borneo,,2026,11,1144,3977,4787,8.9
 Sarawak,,2017,1,28,92,108,12.9
 Sarawak,,2017,2,22,41,55,12.0
 Sarawak,,2017,3,16,21,36,11.5
@@ -353,7 +353,7 @@ Sabah,,2026,5,17,142,157,6.3
 Sabah,,2026,6,10,135,144,6.1
 Sabah,,2026,7,6,81,85,6.7
 Sabah,,2026,8,33,283,313,8.3
-Sabah,,2026,9,13,144,155,7.0
+Sabah,,2026,9,13,143,154,7.0
 Sabah,,2026,10,2,88,90,8.5
 Sabah,,2026,11,1,22,22,4.7
 Brunei,,2017,1,1,0,1,10.6
@@ -590,8 +590,8 @@ West Kalimantan,,2026,4,65,280,324,8.9
 West Kalimantan,,2026,5,31,250,278,9.1
 West Kalimantan,,2026,6,119,479,591,9.1
 West Kalimantan,,2026,7,837,4773,5399,13.4
-West Kalimantan,,2026,8,8268,31322,36224,14.3
-West Kalimantan,,2026,9,5817,18565,21464,11.2
+West Kalimantan,,2026,8,8267,31322,36223,14.3
+West Kalimantan,,2026,9,5818,18565,21464,11.2
 West Kalimantan,,2026,10,1753,6211,7069,13.8
 West Kalimantan,,2026,11,28,192,219,10.8
 Central Kalimantan,,2017,1,5,19,22,5.0
@@ -709,10 +709,10 @@ Central Kalimantan,,2026,4,36,183,217,10.1
 Central Kalimantan,,2026,5,7,98,105,4.5
 Central Kalimantan,,2026,6,29,234,262,6.5
 Central Kalimantan,,2026,7,329,1556,1778,8.4
-Central Kalimantan,,2026,8,5946,19549,22251,10.8
-Central Kalimantan,,2026,9,12591,39720,44652,11.2
-Central Kalimantan,,2026,10,9759,42175,45714,8.7
-Central Kalimantan,,2026,11,460,1928,2187,8.3
+Central Kalimantan,,2026,8,5947,19548,22251,10.8
+Central Kalimantan,,2026,9,12590,39720,44652,11.2
+Central Kalimantan,,2026,10,9759,42174,45713,8.7
+Central Kalimantan,,2026,11,460,1930,2189,8.3
 South Kalimantan,,2017,1,0,8,8,3.0
 South Kalimantan,,2017,2,2,8,10,4.3
 South Kalimantan,,2017,3,1,29,30,2.7
@@ -828,10 +828,10 @@ South Kalimantan,,2026,4,5,145,149,3.1
 South Kalimantan,,2026,5,9,115,119,2.9
 South Kalimantan,,2026,6,37,233,260,3.7
 South Kalimantan,,2026,7,164,1047,1157,6.5
-South Kalimantan,,2026,8,1518,5990,6986,10.2
+South Kalimantan,,2026,8,1518,5991,6987,10.2
 South Kalimantan,,2026,9,1833,7783,8866,10.3
 South Kalimantan,,2026,10,1535,7935,8766,8.4
-South Kalimantan,,2026,11,54,293,340,7.1
+South Kalimantan,,2026,11,54,298,345,7.0
 East Kalimantan,,2017,1,4,41,44,2.9
 East Kalimantan,,2017,2,7,85,91,4.3
 East Kalimantan,,2017,3,5,100,105,3.5
@@ -948,9 +948,9 @@ East Kalimantan,,2026,5,76,442,509,7.8
 East Kalimantan,,2026,6,90,722,794,6.8
 East Kalimantan,,2026,7,292,1204,1442,7.2
 East Kalimantan,,2026,8,2139,8116,9497,10.5
-East Kalimantan,,2026,9,2908,10495,12303,9.6
-East Kalimantan,,2026,10,1955,9150,10412,8.4
-East Kalimantan,,2026,11,535,1376,1797,10.1
+East Kalimantan,,2026,9,2908,10496,12304,9.6
+East Kalimantan,,2026,10,1955,9151,10413,8.4
+East Kalimantan,,2026,11,553,1437,1873,9.8
 North Kalimantan,,2017,1,1,12,12,3.8
 North Kalimantan,,2017,2,2,18,19,8.6
 North Kalimantan,,2017,3,2,6,8,7.3
@@ -2019,7 +2019,7 @@ Sabah,Tawau,2026,5,0,10,10,2.7
 Sabah,Tawau,2026,6,1,3,4,15.7
 Sabah,Tawau,2026,7,0,0,0,
 Sabah,Tawau,2026,8,0,1,1,2.7
-Sabah,Tawau,2026,9,0,3,3,6.7
+Sabah,Tawau,2026,9,0,2,2,5.7
 Sabah,Tawau,2026,10,1,3,4,2.9
 Sabah,Tawau,2026,11,0,1,1,0.6
 Brunei,Bandar Seri Begawan,2017,1,0,0,0,
@@ -2370,13 +2370,13 @@ West Kalimantan,Ketapang,2025,11,0,35,35,8.2
 West Kalimantan,Ketapang,2025,12,0,9,9,7.6
 West Kalimantan,Ketapang,2026,1,22,117,136,8.0
 West Kalimantan,Ketapang,2026,2,22,115,129,10.2
-West Kalimantan,Ketapang,2026,3,72,427,472,11.2
+West Kalimantan,Ketapang,2026,3,72,426,471,11.2
 West Kalimantan,Ketapang,2026,4,9,32,41,8.3
 West Kalimantan,Ketapang,2026,5,3,48,51,6.2
 West Kalimantan,Ketapang,2026,6,44,131,171,9.7
 West Kalimantan,Ketapang,2026,7,226,1084,1254,11.4
-West Kalimantan,Ketapang,2026,8,3164,10163,11579,13.7
-West Kalimantan,Ketapang,2026,9,3639,11987,13637,11.4
+West Kalimantan,Ketapang,2026,8,3163,10162,11577,13.7
+West Kalimantan,Ketapang,2026,9,3640,11987,13637,11.4
 West Kalimantan,Ketapang,2026,10,1579,5489,6193,14.3
 West Kalimantan,Ketapang,2026,11,16,143,159,11.3
 Central Kalimantan,Palangka Raya,2017,1,0,1,1,5.9
@@ -2496,7 +2496,7 @@ Central Kalimantan,Palangka Raya,2026,6,0,5,5,1.6
 Central Kalimantan,Palangka Raya,2026,7,4,43,45,3.4
 Central Kalimantan,Palangka Raya,2026,8,480,1693,1835,7.8
 Central Kalimantan,Palangka Raya,2026,9,722,3021,3220,6.5
-Central Kalimantan,Palangka Raya,2026,10,501,2266,2448,6.0
+Central Kalimantan,Palangka Raya,2026,10,501,2264,2446,6.0
 Central Kalimantan,Palangka Raya,2026,11,7,13,17,5.6
 Central Kalimantan,Pulang Pisau,2017,1,0,0,0,
 Central Kalimantan,Pulang Pisau,2017,2,2,2,4,8.3
@@ -2614,8 +2614,8 @@ Central Kalimantan,Pulang Pisau,2026,5,0,4,4,3.8
 Central Kalimantan,Pulang Pisau,2026,6,0,8,8,1.9
 Central Kalimantan,Pulang Pisau,2026,7,72,147,180,11.6
 Central Kalimantan,Pulang Pisau,2026,8,444,1529,1709,9.9
-Central Kalimantan,Pulang Pisau,2026,9,2799,7329,8088,12.9
-Central Kalimantan,Pulang Pisau,2026,10,1563,6677,7178,8.2
+Central Kalimantan,Pulang Pisau,2026,9,2800,7332,8092,12.9
+Central Kalimantan,Pulang Pisau,2026,10,1563,6676,7177,8.2
 Central Kalimantan,Pulang Pisau,2026,11,52,120,135,10.1
 South Kalimantan,Banjarmasin,2017,1,0,0,0,
 South Kalimantan,Banjarmasin,2017,2,0,0,0,
@@ -2734,7 +2734,7 @@ South Kalimantan,Banjarmasin,2026,6,0,0,0,
 South Kalimantan,Banjarmasin,2026,7,0,0,0,
 South Kalimantan,Banjarmasin,2026,8,0,0,0,
 South Kalimantan,Banjarmasin,2026,9,0,2,2,8.9
-South Kalimantan,Banjarmasin,2026,10,0,3,3,2.8
+South Kalimantan,Banjarmasin,2026,10,0,2,2,2.2
 South Kalimantan,Banjarmasin,2026,11,0,0,0,
 East Kalimantan,Samarinda,2017,1,0,1,1,0.4
 East Kalimantan,Samarinda,2017,2,0,2,2,2.4
@@ -2854,7 +2854,7 @@ East Kalimantan,Samarinda,2026,7,0,8,8,1.6
 East Kalimantan,Samarinda,2026,8,5,31,36,7.5
 East Kalimantan,Samarinda,2026,9,32,87,110,9.0
 East Kalimantan,Samarinda,2026,10,22,83,98,10.1
-East Kalimantan,Samarinda,2026,11,9,15,22,15.5
+East Kalimantan,Samarinda,2026,11,9,17,24,14.3
 East Kalimantan,Balikpapan,2017,1,0,0,0,
 East Kalimantan,Balikpapan,2017,2,0,2,2,7.7
 East Kalimantan,Balikpapan,2017,3,0,0,0,

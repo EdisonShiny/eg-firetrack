@@ -1,11 +1,11 @@
 {
-  "api_last_attempt": "2026-11-19T02:53:46Z",
+  "api_last_attempt": "2026-11-20T02:45:04Z",
   "api_ok": true,
-  "api_last_success": "2026-11-19T02:53:46Z",
+  "api_last_success": "2026-11-20T02:45:04Z",
   "api_rows_by_source": {
-    "VIIRS_NOAA20_NRT": 151,
+    "VIIRS_NOAA20_NRT": 141,
     "VIIRS_SNPP_NRT": 0,
-    "MODIS_NRT": 12
+    "MODIS_NRT": 20
   },
   "api_error": null
 }

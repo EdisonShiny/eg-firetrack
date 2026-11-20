@@ -1,8 +1,8 @@
 {
   "is_sample": false,
-  "built_at": "2026-11-19T02:53:49Z",
-  "data_through_utc": "2026-11-18 18:04:00",
-  "rows": 1737136,
+  "built_at": "2026-11-20T02:45:08Z",
+  "data_through_utc": "2026-11-20 00:54:00",
+  "rows": 1737285,
   "rows_per_year_sensor": {
     "2017": {
       "MODIS": 4492,
@@ -41,8 +41,8 @@
       "VIIRS": 65998
     },
     "2026": {
-      "MODIS": 72050,
-      "VIIRS": 631701
+      "MODIS": 72069,
+      "VIIRS": 631831
     }
   },
   "satellites": [
@@ -71,6 +71,7 @@
     "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1221.csv",
     "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1233.csv",
     "data\\raw\\firms\\api\\fire_nrt_VIIRS_NOAA20_NRT_20261109T1413.csv",
+    "FIRMS API",
     "FIRMS API",
     "FIRMS API",
     "FIRMS API",
